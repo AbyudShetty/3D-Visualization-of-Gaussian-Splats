@@ -1,6 +1,6 @@
-# SPZ First-Person Viewer
+# 3D-Visualization-of-Gaussian-Splats
 
-A lightweight, browser-based first-person navigation viewer for SPZ (Gaussian Splat) files. Explore 3D Gaussian Splat scenes with smooth camera controls and customizable boundaries.
+A lightweight, browser-based first-person navigation viewer for Gaussian Splat files (PES Parking lot). Explore 3D Gaussian Splat scenes with smooth camera controls and customizable boundaries.
 
 ## Features
 
@@ -8,7 +8,7 @@ A lightweight, browser-based first-person navigation viewer for SPZ (Gaussian Sp
 - 🎯 **Adjustable Mouse Sensitivity** - Real-time sensitivity control (5%-100%)
 - 📍 **Live Position Tracking** - See your current X, Y, Z coordinates
 - 🚧 **Movement Boundaries** - Configurable restrictions to keep navigation within scene bounds
-- ⚡ **Smooth Movement** - Physics-based velocity and damping for natural feel
+- ⚡ **Smooth Movement** - Physics-based velocity and damping for a natural feel
 - 🌐 **Zero Installation** - Runs entirely in the browser
 
 ## Demo
@@ -175,10 +175,6 @@ world.rotation.x = Math.PI / 2; // 90° around X
 - No loading progress indicator (feature planned)
 - Boundaries must be set manually (auto-detection in future release)
 
-## License
-
-MIT License - feel free to use and modify for your projects.
-
 ## Credits
 
 - Built with [Three.js](https://threejs.org/)
@@ -187,14 +183,3 @@ MIT License - feel free to use and modify for your projects.
 ## Contributing
 
 Contributions welcome! Please open an issue or submit a pull request.
-
-## Support
-
-Having issues? Please open a GitHub issue with:
-- Browser and version
-- Console error messages
-- Steps to reproduce
-
----
-
-**Made with ❤️ for the Gaussian Splatting community**
