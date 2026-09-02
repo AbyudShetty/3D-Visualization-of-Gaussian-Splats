@@ -73,9 +73,9 @@
   <script type="importmap">
     {
       "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.178.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.178.0/examples/jsm/",
-        "@sparkjsdev/spark": "https://cdn.jsdelivr.net/npm/@sparkjsdev/spark@latest/dist/spark.module.js"
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+        "@sparkjsdev/spark": "https://sparkjs.dev/releases/spark/2.1.0/spark.module.js"
       }
     }
   </script>
@@ -111,7 +111,7 @@
 <script type="module">
   import * as THREE from "three";
   import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
-  import { SplatMesh } from "@sparkjsdev/spark";
+  import { SplatMesh, SparkRenderer } from "@sparkjsdev/spark";
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -122,8 +122,12 @@
   camera.position.set(0, 0, 0);
   camera.rotation.y = 0; // Facing towards -Z axis
 
+  // Spark requires a SparkRenderer added to the scene to actually rasterize splats
+  const sparkRenderer = new SparkRenderer({ renderer });
+  scene.add(sparkRenderer);
+
   // Load Marble world
-  const world = new SplatMesh({ url: "./a1.spz" });
+  const world = new SplatMesh({ url: "./ParkingLot.spz" });
   world.rotation.z = Math.PI;
   world.rotation.y = Math.PI; 
   scene.add(world);
@@ -135,7 +139,7 @@
   // First-person controls with adjustable sensitivity
   const controls = new PointerLockControls(camera, document.body);
   let sensitivityFactor = 0.3;
-  
+
   controls.onMouseMove = function(event) {
     if (!controls.isLocked) return;
     
